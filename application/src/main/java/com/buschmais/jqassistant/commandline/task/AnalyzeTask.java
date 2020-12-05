@@ -58,7 +58,7 @@ public class AnalyzeTask extends AbstractAnalyzeTask {
 
     @Override
     protected void executeTask(final Store store) throws CliExecutionException {
-        LOGGER.info("Will warn on violations starting form severity '" + warnOnSeverity + "'");
+        LOGGER.info("Will warn on violations starting from severity '" + warnOnSeverity + "'");
         LOGGER.info("Will fail on violations starting from severity '" + failOnSeverity + "'.");
         LOGGER.info("Executing analysis.");
 

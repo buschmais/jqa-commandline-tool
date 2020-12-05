@@ -12,7 +12,7 @@ import com.buschmais.jqassistant.core.shared.option.OptionHelper;
 import com.buschmais.jqassistant.core.store.api.Store;
 import com.buschmais.jqassistant.core.store.api.StoreConfiguration;
 import com.buschmais.jqassistant.core.store.api.StoreFactory;
-import com.buschmais.jqassistant.neo4j.backend.bootstrap.EmbeddedNeo4jConfiguration;
+import com.buschmais.jqassistant.neo4j.embedded.EmbeddedNeo4jConfiguration;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;

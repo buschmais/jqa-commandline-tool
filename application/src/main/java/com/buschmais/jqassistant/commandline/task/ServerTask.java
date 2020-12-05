@@ -6,7 +6,6 @@ import java.util.List;
 import com.buschmais.jqassistant.commandline.CliExecutionException;
 import com.buschmais.jqassistant.core.store.api.Store;
 import com.buschmais.jqassistant.core.store.impl.EmbeddedGraphStore;
-import com.buschmais.jqassistant.neo4j.backend.bootstrap.EmbeddedNeo4jServer;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Option;
@@ -33,8 +32,6 @@ public class ServerTask extends AbstractStoreTask {
     @Override
     protected void executeTask(final Store store) throws CliExecutionException {
         EmbeddedGraphStore embeddedGraphStore = (EmbeddedGraphStore) store;
-        EmbeddedNeo4jServer server = embeddedGraphStore.getServer();
-        server.start();
         LOGGER.info("Running server");
         if (runAsDaemon) {
             // let the neo4j daemon do the job
@@ -45,8 +42,6 @@ public class ServerTask extends AbstractStoreTask {
                 System.in.read();
             } catch (IOException e) {
                 throw new CliExecutionException("Cannot read from console.", e);
-            } finally {
-                server.stop();
             }
         }
     }

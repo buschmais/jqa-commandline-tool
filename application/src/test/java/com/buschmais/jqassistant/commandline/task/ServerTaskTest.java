@@ -7,17 +7,17 @@ import java.util.HashMap;
 import com.buschmais.jqassistant.commandline.CliExecutionException;
 import com.buschmais.jqassistant.core.plugin.api.PluginRepository;
 import com.buschmais.jqassistant.core.store.impl.EmbeddedGraphStore;
-import com.buschmais.jqassistant.neo4j.backend.bootstrap.EmbeddedNeo4jServer;
 
-import org.apache.commons.cli.*;
-import org.junit.jupiter.api.BeforeEach;
+import org.apache.commons.cli.BasicParser;
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.Option;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class ServerTaskTest {
@@ -28,21 +28,11 @@ public class ServerTaskTest {
     @Mock
     private EmbeddedGraphStore store;
 
-    @Mock
-    private EmbeddedNeo4jServer server;
-
-    @BeforeEach
-    public final void setUp() {
-        doReturn(server).when(store).getServer();
-    }
-
     private ServerTask serverTask = new ServerTask();
 
     @Test
     public void daemon() throws CliExecutionException, ParseException {
         startServer("-daemon");
-
-        verify(server).start();
     }
 
     @Test
@@ -56,9 +46,6 @@ public class ServerTaskTest {
             System.setIn(stdin);
 
         }
-
-        verify(server).start();
-        verify(server).stop();
     }
 
     private void startServer(String... arguments) throws ParseException, CliExecutionException {

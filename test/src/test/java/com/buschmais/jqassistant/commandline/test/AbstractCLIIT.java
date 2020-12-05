@@ -1,7 +1,15 @@
 package com.buschmais.jqassistant.commandline.test;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.Executors;
 
 import com.buschmais.jqassistant.commandline.Task;
@@ -26,7 +34,7 @@ import static org.junit.Assume.assumeTrue;
 public abstract class AbstractCLIIT {
 
     public enum NeoVersion {
-        NEO4JV3("neo4jv3");
+        NEO4JV4("neo4jv4");
 
         private final String version;
 

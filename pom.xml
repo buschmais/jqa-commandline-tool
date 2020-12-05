@@ -48,7 +48,7 @@
         <junit.version>5.5.0-M1</junit.version>
         <test.distribution>${project.build.directory}/distribution/</test.distribution>
         <test.jqassistant.home>${test.distribution}</test.jqassistant.home>
-        <org.hamcrest_version>2.0.0.0</org.hamcrest_version>
+        <org.hamcrest_version>2.2</org.hamcrest_version>
         <assertj-core.version>3.11.1</assertj-core.version>
         <mockito.version>2.23.4</mockito.version>
     </properties>
@@ -71,20 +71,7 @@
                         <quiet>true</quiet>
                         <detectLinks>false</detectLinks>
                         <detectOfflineLinks>false</detectOfflineLinks>
-                        <additionalOptions>
-                            <additionalOption>-Xdoclint:none</additionalOption>
-                            <additionalOption>--base-dir ${project.basedir}</additionalOption>
-                        </additionalOptions>
-
-                        <source>1.7</source>
-                        <doclet>org.asciidoctor.Asciidoclet</doclet>
-                        <docletArtifact>
-                            <groupId>org.asciidoctor</groupId>
-                            <artifactId>asciidoclet</artifactId>
-                            <version>1.5.4</version>
-                        </docletArtifact>
-                        <!--<overview>src/main/java/overview.adoc</overview>-->
-                        </configuration>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -267,7 +254,7 @@
     <modules>
         <module>application</module>
         <module>plugins</module>
-        <module>neo4jv3</module>
+        <module>neo4jv4</module>
         <module>test</module>
     </modules>
 

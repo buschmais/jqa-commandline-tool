@@ -43,21 +43,21 @@
         <!-- Distributions -->
         <dependency>
             <groupId>com.buschmais.jqassistant.cli</groupId>
-            <artifactId>jqassistant-commandline-neo4jv3</artifactId>
+            <artifactId>jqassistant-commandline-neo4jv4</artifactId>
             <type>zip</type>
             <classifier>distribution</classifier>
             <version>${project.version}</version>
             <exclusions>
                 <exclusion>
-                    <groupId>com.buschmais.jqassistant.neo4jserver</groupId>
-                    <artifactId>neo4jv3</artifactId>
+                    <groupId>com.buschmais.jqassistant.neo4j</groupId>
+                    <artifactId>embedded</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
         <!-- Test -->
         <dependency>
-            <groupId>com.buschmais.jqassistant.neo4jserver</groupId>
-            <artifactId>neo4jv3</artifactId>
+            <groupId>com.buschmais.jqassistant.neo4j</groupId>
+            <artifactId>embedded</artifactId>
             <version>${jqa-neo4jbackend.version}</version>
             <scope>test</scope>
         </dependency>
@@ -78,7 +78,7 @@
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>java-hamcrest</artifactId>
+            <artifactId>hamcrest</artifactId>
             <version>${org.hamcrest_version}</version>
             <scope>test</scope>
         </dependency>
